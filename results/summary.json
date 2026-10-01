@@ -1,0 +1,245 @@
+{
+  "title": "Predicting In-Vehicle Coupon Acceptance",
+  "dataset": {
+    "rows": 12684,
+    "features": 25,
+    "exact_duplicate_rows": 74,
+    "acceptance_rate": 0.5684326710816777,
+    "source": "https://doi.org/10.24432/C5GS4P",
+    "license": "CC BY 4.0",
+    "sha256": "d47897367f5a12a31dece0f4e42d7bd9da76d7016b568da511b50335d08dcb43"
+  },
+  "split": {
+    "train_rows": 10148,
+    "test_rows": 2536,
+    "train_acceptance_rate": 0.5683878596767836,
+    "test_acceptance_rate": 0.5686119873817035,
+    "predictor_groups": 12587,
+    "shared_groups": 0
+  },
+  "dropped_columns": {
+    "car": "over 90% missing",
+    "toCoupon_GEQ5min": "constant in training"
+  },
+  "retained_features": 23,
+  "selected_model": "Random Forest",
+  "best_parameters": {
+    "model__max_depth": null,
+    "model__min_samples_leaf": 2
+  },
+  "cv_results": [
+    {
+      "model": "Majority baseline",
+      "cv_f1": 0.724805229998082,
+      "cv_f1_std": 0.00016708973248878272,
+      "cv_roc_auc": 0.5,
+      "cv_accuracy": 0.5683878897406748,
+      "train_f1": 0.7248052276025965,
+      "best_parameters": {}
+    },
+    {
+      "model": "Logistic Regression",
+      "cv_f1": 0.7337128175259247,
+      "cv_f1_std": 0.007054437008080085,
+      "cv_roc_auc": 0.7344214227069914,
+      "cv_accuracy": 0.6820062960911766,
+      "train_f1": 0.7443155360392014,
+      "best_parameters": {
+        "model__C": 0.1
+      }
+    },
+    {
+      "model": "Decision Tree",
+      "cv_f1": 0.7416691343569247,
+      "cv_f1_std": 0.006153944985879065,
+      "cv_roc_auc": 0.6764457777231058,
+      "cv_accuracy": 0.6373654550577628,
+      "train_f1": 0.742490210175969,
+      "best_parameters": {
+        "model__max_depth": 3,
+        "model__min_samples_leaf": 5
+      }
+    },
+    {
+      "model": "Random Forest",
+      "cv_f1": 0.7914336549239769,
+      "cv_f1_std": 0.006837229597344503,
+      "cv_roc_auc": 0.8175818129904094,
+      "cv_accuracy": 0.7491143692735205,
+      "train_f1": 0.9627697148905815,
+      "best_parameters": {
+        "model__max_depth": null,
+        "model__min_samples_leaf": 2
+      }
+    }
+  ],
+  "test_metrics": {
+    "accuracy": 0.7665615141955836,
+    "precision": 0.7636476426799007,
+    "recall": 0.8536754507628294,
+    "f1": 0.8061558611656844,
+    "roc_auc": 0.8366274750435486,
+    "confusion_matrix": [
+      [
+        713,
+        381
+      ],
+      [
+        211,
+        1231
+      ]
+    ]
+  },
+  "baseline_test_metrics": {
+    "accuracy": 0.5686119873817035,
+    "precision": 0.5686119873817035,
+    "recall": 1.0,
+    "f1": 0.7249874308697838,
+    "roc_auc": 0.5,
+    "confusion_matrix": [
+      [
+        0,
+        1094
+      ],
+      [
+        0,
+        1442
+      ]
+    ]
+  },
+  "limitations": [
+    "Survey intention is not observed purchase or redemption.",
+    "Respondent IDs are unavailable; identical-profile grouping does not guarantee independent people.",
+    "No external or temporal validation; no causal interpretation.",
+    "Probabilities are uncalibrated; demographic inputs require review before practical use."
+  ],
+  "checks": {
+    "holdout_group_overlap": 0,
+    "cv_group_overlap": 0,
+    "target_excluded": true,
+    "reload_predictions_match": true,
+    "missing_and_unseen_values_supported": true,
+    "notebook_completed": true
+  },
+  "top_features": [
+    {
+      "feature": "coupon",
+      "mean_f1_decrease": 0.08579596587777086,
+      "std": 0.004606781338165909
+    },
+    {
+      "feature": "CoffeeHouse",
+      "mean_f1_decrease": 0.043428503165254574,
+      "std": 0.005400835586120582
+    },
+    {
+      "feature": "expiration",
+      "mean_f1_decrease": 0.02680868578438327,
+      "std": 0.0032132609252308367
+    },
+    {
+      "feature": "Bar",
+      "mean_f1_decrease": 0.023230064772553384,
+      "std": 0.002210966535624554
+    },
+    {
+      "feature": "maritalStatus",
+      "mean_f1_decrease": 0.013145444400003514,
+      "std": 0.0025347351971606014
+    },
+    {
+      "feature": "income",
+      "mean_f1_decrease": 0.012109107303901422,
+      "std": 0.0016627742583527716
+    },
+    {
+      "feature": "CarryAway",
+      "mean_f1_decrease": 0.010915860180910286,
+      "std": 0.0011879569808859642
+    },
+    {
+      "feature": "Restaurant20To50",
+      "mean_f1_decrease": 0.009818270899735748,
+      "std": 0.0019706229142590066
+    },
+    {
+      "feature": "destination",
+      "mean_f1_decrease": 0.008064045279671351,
+      "std": 0.0021759514311734955
+    },
+    {
+      "feature": "occupation",
+      "mean_f1_decrease": 0.008057797041660764,
+      "std": 0.0015850523067510087
+    }
+  ],
+  "errors_by_coupon": [
+    {
+      "coupon": "Bar",
+      "count": 408,
+      "error_rate": 0.2181372549019608,
+      "actual_acceptance": 0.4117647058823529,
+      "predicted_acceptance": 0.3700980392156863
+    },
+    {
+      "coupon": "Carry out & Take away",
+      "count": 489,
+      "error_rate": 0.24335378323108384,
+      "actual_acceptance": 0.7198364008179959,
+      "predicted_acceptance": 0.9386503067484663
+    },
+    {
+      "coupon": "Coffee House",
+      "count": 788,
+      "error_rate": 0.22081218274111675,
+      "actual_acceptance": 0.49238578680203043,
+      "predicted_acceptance": 0.4949238578680203
+    },
+    {
+      "coupon": "Restaurant(20-50)",
+      "count": 282,
+      "error_rate": 0.34397163120567376,
+      "actual_acceptance": 0.41843971631205673,
+      "predicted_acceptance": 0.4574468085106383
+    },
+    {
+      "coupon": "Restaurant(<20)",
+      "count": 569,
+      "error_rate": 0.19859402460456943,
+      "actual_acceptance": 0.7311072056239016,
+      "predicted_acceptance": 0.8488576449912126
+    }
+  ],
+  "hypothetical_predictions": [
+    {
+      "coupon": "Coffee House",
+      "destination": "No Urgent Place",
+      "predicted_acceptance": 1,
+      "model_probability": 0.6474498790278083
+    },
+    {
+      "coupon": "Bar",
+      "destination": "Work",
+      "predicted_acceptance": 0,
+      "model_probability": 0.29366954532395706
+    },
+    {
+      "coupon": "Carry out & Take away",
+      "destination": "Home",
+      "predicted_acceptance": 1,
+      "model_probability": 0.7885562943678266
+    }
+  ],
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "joblib": "1.6.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "python": "3.12.14"
+}

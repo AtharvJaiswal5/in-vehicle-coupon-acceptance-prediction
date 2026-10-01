@@ -1,0 +1,4 @@
+destination,passanger,weather,temperature,time,coupon,expiration,gender,age,maritalStatus,has_children,education,occupation,income,car,Bar,CoffeeHouse,CarryAway,RestaurantLessThan20,Restaurant20To50,toCoupon_GEQ5min,toCoupon_GEQ15min,toCoupon_GEQ25min,direction_same,direction_opp,predicted_acceptance,model_probability
+No Urgent Place,Alone,Sunny,80,6PM,Coffee House,1d,Female,21,Married partner,0,Some college - no degree,Unemployed,$25000 - $37499,Scooter and motorcycle,never,gt8,1~3,1~3,less1,1,1,0,0,1,1,0.6474498790278083
+Work,Alone,Sunny,80,6PM,Bar,1d,Female,21,Married partner,0,Some college - no degree,Unemployed,$25000 - $37499,Scooter and motorcycle,never,less1,1~3,1~3,less1,1,1,0,0,1,0,0.29366954532395706
+Home,Alone,Sunny,80,6PM,Carry out & Take away,1d,Female,21,Married partner,0,Some college - no degree,Unemployed,$25000 - $37499,Scooter and motorcycle,never,less1,1~3,1~3,less1,1,1,0,0,1,1,0.7885562943678266
